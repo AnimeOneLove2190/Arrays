@@ -12,16 +12,16 @@ namespace Project01
             //Quest01
             int arraySize = int.Parse(Console.ReadLine());
             int minValue = int.Parse(Console.ReadLine());
-            int maxValue = int.Parse(Console.ReadLine());
-            int[] givenArray = arrayService.GetRandomArray(arraySize, minValue, maxValue);
+            int maxValueQuest01 = int.Parse(Console.ReadLine());
+            int[] givenArray = arrayService.GetRandomArray(arraySize, minValue, maxValueQuest01);
             arrayService.PrintArray(givenArray);
             //Quest02
-            int[] outputArray = new int[10];
-            numberService.CreateArray(outputArray);
-            arrayService.PrintArray(outputArray);
+            int[] randomArray = new int[10];
+            numberService.FillArray(randomArray);
+            arrayService.PrintArray(randomArray);
             //Quest03
             int[] justArray = new int[10];
-            numberService.CreateArray(justArray);
+            numberService.FillArray(justArray);
             int sum = arrayService.GetSum(justArray);
             Console.WriteLine(sum);
             //Quest04
@@ -48,6 +48,34 @@ namespace Project01
             personArray[4] = personFive;
             double averageAge = arrayService.GetAverageAge(personArray);
             Console.WriteLine(averageAge);
+            //Quest05
+            Person personWithMinAge = arrayService.GetMinAgePerson(personArray);
+            Console.WriteLine(personWithMinAge.name);
+            Console.WriteLine(personWithMinAge.age);
+            //Quest06
+            int maxValueQuest06 = arrayService.GetMaxValue(randomArray);
+            Console.WriteLine(maxValueQuest06);
+            //Quest07
+            int maxIndex = arrayService.GetMaxIndex(randomArray);
+            Console.WriteLine(maxIndex);
+            //Quest08
+            int minIndex = arrayService.GetMinIndex(randomArray);
+            Console.WriteLine(minIndex);
+            //Quest09
+            int desiredNumber = 384;
+            int desiredIndex = arrayService.GetIndex(randomArray, desiredNumber);
+            Console.WriteLine(desiredIndex);
+            //Quest10
+            int[] randomArrayPlus = new int[10];
+            numberService.FillArray(randomArrayPlus);
+            bool conclusion = arrayService.IsEqual(randomArray, randomArrayPlus);
+            Console.WriteLine(conclusion);
+            //Quest11
+            int countOfEvenNumbers = arrayService.GetEvenCount(randomArray);
+            Console.WriteLine(countOfEvenNumbers);
+            //Quest12
+            int[] evenArray = arrayService.GetEvenArray(randomArray);
+            arrayService.PrintArray(evenArray);
         }
     }
 }

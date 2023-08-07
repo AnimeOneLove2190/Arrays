@@ -6,7 +6,7 @@ namespace Project01
 {
     class MathService
     {
-        public void CreateArray(int[] inputArray)
+        public void FillArray(int[] inputArray)
         {
             Random godOfNumbers = new Random();
             for (int i = 0; i < inputArray.Length; i++)
