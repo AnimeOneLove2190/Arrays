@@ -20,9 +20,10 @@ namespace Project01
         //Quest02
         public void PrintArray(int[] array)
         {
-            if (array.Length == 0)
+            if (array == null)
             {
                 Console.WriteLine("Массив пуст, милорд");
+                return;
             }
             for (int i = 0; i < array.Length; i++)
             {
@@ -32,6 +33,10 @@ namespace Project01
         //Quest03
         public int GetSum(int[] inputArray)
         {
+            if (inputArray == null)
+            {
+                return 0;
+            }
             int result = 0;
             for (int i = 0; i < inputArray.Length; i++)
             {
@@ -42,6 +47,10 @@ namespace Project01
         //Quest04
         public double GetAverageAge(Person[] waifuArray)
         {
+            if (waifuArray == null)
+            {
+                return 0;
+            }
             int sum = 0;
             for (int i = 0; i < waifuArray.Length; i++)
             {
@@ -54,6 +63,13 @@ namespace Project01
         //Quest05
         public Person GetMinAgePerson(Person[] waifuArray)
         {
+            //Верхняя граница костыля
+            if (waifuArray == null || waifuArray.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            //Нижняя граница костыля
             Person personWithMinAge = waifuArray[0];
             for (int i = 1; i < waifuArray.Length; i++)
             {
@@ -75,6 +91,13 @@ namespace Project01
         //Quest06
         public int GetMaxValue(int[] array)
         {
+            //Верхняя граница костыля
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return 0;
+            }
+            //Нижняя граница костыля
             int maxValue = array[0];
             for (int i = 1; i < array.Length; i++)
             {
@@ -88,6 +111,11 @@ namespace Project01
         //Quest07
         public int GetMaxIndex(int[] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return -1;
+            }
             int maxValue = array[0];
             int maxIndex = 0;
             for (int i = 1; i < array.Length; i++)
@@ -103,6 +131,11 @@ namespace Project01
         //Quest08
         public int GetMinIndex(int[] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return -1;
+            }
             int minValue = array[0];
             int minIndex = 0;
             for (int i = 1; i < array.Length; i++)
@@ -119,7 +152,7 @@ namespace Project01
         public int GetIndex(int[] array, int desiredNumber)
         {
             int desiredIndex = -1;
-            for (int i = 1; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 if (desiredNumber == array[i])
                 {
@@ -132,6 +165,10 @@ namespace Project01
         //Quest10
         public bool IsEqual(int[] arrayOne, int[] arrayTwo)
         {
+            if (arrayOne == null && arrayTwo == null)
+            {
+                return true;
+            }
             if (arrayOne.Length == arrayTwo.Length)
             {
                 for (int i = 0; i < arrayOne.Length; i++)
@@ -148,6 +185,11 @@ namespace Project01
         //Quest11
         public int GetEvenCount(int[] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return 0;
+            }
             int countOfNumbers = 0;
             for (int i = 0; i < array.Length; i++)
             {
@@ -161,6 +203,11 @@ namespace Project01
         //Quest12
         public int[] GetEvenArray(int[] array)
         {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
             int countOfNumbers = 0;
             for (int i = 0; i < array.Length; i++)
             {
