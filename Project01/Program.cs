@@ -14,11 +14,11 @@ namespace Project01
             int minValue = int.Parse(Console.ReadLine());
             int maxValueQuest01 = int.Parse(Console.ReadLine());
             int[] givenArray = arrayService.GetRandomArray(arraySize, minValue, maxValueQuest01);
-            arrayService.PrintArray(givenArray);
+            arrayService.PrintArrayNumber(givenArray);
             //Quest02
             int[] randomArray = new int[10];
             numberService.FillArray(randomArray);
-            arrayService.PrintArray(randomArray);
+            arrayService.PrintArrayNumber(randomArray);
             //Quest03
             int[] justArray = new int[10];
             numberService.FillArray(justArray);
@@ -66,16 +66,28 @@ namespace Project01
             int desiredIndex = arrayService.GetIndex(randomArray, desiredNumber);
             Console.WriteLine(desiredIndex);
             //Quest10
-            int[] randomArrayPlus = new int[10];
-            numberService.FillArray(randomArrayPlus);
-            bool conclusion = arrayService.IsEqual(randomArray, randomArrayPlus);
+            int[] randomArrayQuest10 = new int[10];
+            numberService.FillArray(randomArrayQuest10);
+            bool conclusion = arrayService.IsEqual(randomArray, randomArrayQuest10);
             Console.WriteLine(conclusion);
             //Quest11
             int countOfEvenNumbers = arrayService.GetEvenCount(randomArray);
             Console.WriteLine(countOfEvenNumbers);
             //Quest12
             int[] evenArray = arrayService.GetEvenArray(randomArray);
-            arrayService.PrintArray(evenArray);
+            arrayService.PrintArrayNumber(evenArray);
+            //Quest14
+            string[] nameArray = arrayService.GetNameArray(personArray);
+            arrayService.PrintArrayText(nameArray);
+            //Quest15
+            int[] randomArrayQuest15 = arrayService.GetArrayWithNewLenght(randomArray, 15);
+            arrayService.PrintArrayNumber(randomArrayQuest15);
+            //Quest16
+            arrayService.ReverseArray(randomArrayQuest10);
+            arrayService.PrintArrayNumber(randomArrayQuest10);
+            //Quest17
+            int[] arraySum = arrayService.GetArraySum(randomArray, randomArrayQuest10);
+            arrayService.PrintArrayNumber(arraySum);
         }
     }
 }

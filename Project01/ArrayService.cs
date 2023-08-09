@@ -18,16 +18,18 @@ namespace Project01
             return randomArray;
         }
         //Quest02
-        public void PrintArray(int[] array)
+        public void PrintArrayNumber(int[] array)
         {
-            if (array == null)
+            if (array == null || array.Length == 0)
             {
                 Console.WriteLine("Массив пуст, милорд");
-                return;
             }
-            for (int i = 0; i < array.Length; i++)
+            else
             {
-                Console.WriteLine(array[i]);
+                for (int i = 0; i < array.Length; i++)
+                {
+                    Console.WriteLine(array[i]);
+                }
             }
         }
         //Quest03
@@ -226,6 +228,140 @@ namespace Project01
                 }
             }
             return evenArray;
+        }
+        //Quest14
+        public void PrintArrayText(string[] array)
+        {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Массив пуст, милорд");
+            }
+            else
+            {
+                for (int i = 0; i < array.Length; i++)
+                {
+                    Console.WriteLine(array[i]);
+                }
+            }
+        }
+        public string[] GetNameArray(Person[] waifuArray)
+        {
+            if (waifuArray == null || waifuArray.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            string[] nameArray = new string[waifuArray.Length];
+            for (int i = 0; i < waifuArray.Length; i++)
+            {
+                Person intermediatePerson = waifuArray[i];
+                nameArray[i] = intermediatePerson.name;
+            }
+            return nameArray;
+        }
+        //Quest15
+        public int[] GetArrayWithNewLenght(int[] array, int newLenght)
+        {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            int[] arrayWithNewLenght = new int[newLenght];
+            if (arrayWithNewLenght.Length == array.Length)
+            {
+                return array;
+            }
+            if (arrayWithNewLenght.Length < array.Length)
+            {
+                for (int i = 0; i < arrayWithNewLenght.Length; i++)
+                {
+                    arrayWithNewLenght[i] = array[i];
+                }
+            }
+            if (arrayWithNewLenght.Length > array.Length)
+            {
+                for (int i = 0, j = 0; i < arrayWithNewLenght.Length; i++, j++)
+                {
+                    if (j < array.Length)
+                    {
+                        arrayWithNewLenght[i] = array[j];
+                    }
+                    else
+                    {
+                        arrayWithNewLenght[i] = 0;
+                    }
+                }
+            }
+            return arrayWithNewLenght;
+        }
+        //Quest16
+        public void ReverseArray(int[] array)
+        {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return;
+            }
+            int[] intermediateArray = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                intermediateArray[i] = array[i];
+            }
+            for (int i = 0, j = array.Length - 1; i < array.Length; i++, j--)
+            {
+                array[i] = intermediateArray[j];
+            }
+        }
+        //Quest17
+        public int[] GetArraySum(int[] arrayOne, int[] arrayTwo)
+        {
+            if ((arrayOne == null || arrayOne.Length == 0) && ((arrayTwo == null || arrayTwo.Length == 0)))
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            int[] arraySum = null;
+            if (arrayOne.Length == arrayTwo.Length)
+            {
+                arraySum = new int[arrayOne.Length];
+                for (int i = 0; i < arraySum.Length; i++)
+                {
+                    arraySum[i] = arrayOne[i] + arrayTwo[i];
+                }
+                return arraySum;
+            }
+            if (arrayOne.Length > arrayTwo.Length)
+            {
+                arraySum = new int[arrayOne.Length];
+                for (int i = 0, j = 0; i < arrayOne.Length; i++, j++)
+                {
+                    if (j < arrayTwo.Length)
+                    {
+                        arraySum[i] = arrayOne[i] + arrayTwo[i];
+                    }
+                    else
+                    {
+                        arraySum[i] = arrayOne[i];
+                    }
+                }
+            }
+            if (arrayOne.Length < arrayTwo.Length)
+            {
+                arraySum = new int[arrayOne.Length];
+                for (int i = 0, j = 0; i < arrayOne.Length; i++, j++)
+                {
+                    if (j < arrayOne.Length)
+                    {
+                        arraySum[i] = arrayOne[i] + arrayTwo[i];
+                    }
+                    else
+                    {
+                        arraySum[i] = arrayTwo[i];
+                    }
+                }
+            }
+            return arraySum;
         }
     }
 }
