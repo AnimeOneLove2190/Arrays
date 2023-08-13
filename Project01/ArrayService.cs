@@ -23,14 +23,13 @@ namespace Project01
             if (array == null || array.Length == 0)
             {
                 Console.WriteLine("Массив пуст, милорд");
+                return;
             }
-            else
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int i = 0; i < array.Length; i++)
-                {
-                    Console.WriteLine(array[i]);
-                }
+                Console.Write($"{array[i]} ");
             }
+            Console.WriteLine();
         }
         //Quest03
         public int GetSum(int[] inputArray)
@@ -235,14 +234,13 @@ namespace Project01
             if (array == null || array.Length == 0)
             {
                 Console.WriteLine("Массив пуст, милорд");
+                return;
             }
-            else
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int i = 0; i < array.Length; i++)
-                {
-                    Console.WriteLine(array[i]);
-                }
+                Console.Write($"{array[i]}, ");
             }
+            Console.WriteLine();
         }
         public string[] GetNameArray(Person[] waifuArray)
         {
@@ -362,6 +360,107 @@ namespace Project01
                 }
             }
             return arraySum;
+        }
+        //Quest18
+        public int[] AddElementInArray(int[] array, int addNumber)
+        {
+            if (array == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            int[] arrayWithNewElement = new int[array.Length + 1];
+            for (int i = 0; i < arrayWithNewElement.Length; i++)
+            {
+                if (i < array.Length)
+                {
+                    arrayWithNewElement[i] = array[i];
+                }
+                else
+                {
+                    arrayWithNewElement[i] = addNumber;
+                }
+            }
+            return arrayWithNewElement;
+        }
+        public Person[] AddElementInArray(Person[] waifuArray, Person person)
+        {
+            if (waifuArray == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            Person[] arrayWithNewElement = new Person[waifuArray.Length + 1];
+            for (int i = 0; i < arrayWithNewElement.Length; i++)
+            {
+                if (i < waifuArray.Length)
+                {
+                    arrayWithNewElement[i] = waifuArray[i];
+                }
+                else
+                {
+                    arrayWithNewElement[i] = person;
+                }
+            }
+            return arrayWithNewElement;
+        }
+        //Quest19
+        public int[] RemoveFirstElementFromArray(int[] array)
+        {
+            if (array == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            int[] arrayWithoutElement = new int[array.Length - 1];
+            for (int i = 0, j = 1; i < arrayWithoutElement.Length; i++, j++)
+            {
+                arrayWithoutElement[i] = array[j];
+            }
+            return arrayWithoutElement;
+        }
+        public Person[] RemoveFirstElementFromArray(Person[] waifuArray)
+        {
+            if (waifuArray == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            Person[] arrayWithoutElement = new Person[waifuArray.Length - 1];
+            for (int i = 0, j = 1; i < arrayWithoutElement.Length; i++, j++)
+            {
+                arrayWithoutElement[i] = waifuArray[j];
+            }
+            return arrayWithoutElement;
+        }
+        //Quest20
+        public int[] RemoveLastElementFromArray(int[] array)
+        {
+            if (array == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            int[] arrayWithoutElement = new int[array.Length - 1];
+            for (int i = 0; i < arrayWithoutElement.Length; i++)
+            {
+                arrayWithoutElement[i] = array[i];
+            }
+            return arrayWithoutElement;
+        }
+        public Person[] RemoveLastElementFromArray(Person[] waifuArray)
+        {
+            if (waifuArray == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            Person[] arrayWithoutElement = new Person[waifuArray.Length - 1];
+            for (int i = 0; i < arrayWithoutElement.Length; i++)
+            {
+                arrayWithoutElement[i] = waifuArray[i];
+            }
+            return arrayWithoutElement;
         }
     }
 }

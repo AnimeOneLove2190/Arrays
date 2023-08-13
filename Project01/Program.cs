@@ -6,7 +6,7 @@ namespace Project01
     {
         static void Main(string[] args)
         {
-            MathService numberService = new MathService();
+            TechnicalService techService = new TechnicalService();
             ArrayService arrayService = new ArrayService();
             Random godOfNumbers = new Random();
             //Quest01
@@ -16,12 +16,12 @@ namespace Project01
             int[] givenArray = arrayService.GetRandomArray(arraySize, minValue, maxValueQuest01);
             arrayService.PrintArrayNumber(givenArray);
             //Quest02
-            int[] randomArray = new int[10];
-            numberService.FillArray(randomArray);
+            int[] randomArray = new int[5];
+            techService.FillArray(randomArray);
             arrayService.PrintArrayNumber(randomArray);
             //Quest03
-            int[] justArray = new int[10];
-            numberService.FillArray(justArray);
+            int[] justArray = new int[5];
+            techService.FillArray(justArray);
             int sum = arrayService.GetSum(justArray);
             Console.WriteLine(sum);
             //Quest04
@@ -40,6 +40,9 @@ namespace Project01
             Person personFive = new Person();
             personFive.name = "Violet Evergarden";
             personFive.age = 14;
+            Person personSix = new Person();
+            personSix.name = "Holo";
+            personSix.age = 834;
             Person[] personArray = new Person[5];
             personArray[0] = personOne;
             personArray[1] = personTwo;
@@ -66,8 +69,8 @@ namespace Project01
             int desiredIndex = arrayService.GetIndex(randomArray, desiredNumber);
             Console.WriteLine(desiredIndex);
             //Quest10
-            int[] randomArrayQuest10 = new int[10];
-            numberService.FillArray(randomArrayQuest10);
+            int[] randomArrayQuest10 = new int[6];
+            techService.FillArray(randomArrayQuest10);
             bool conclusion = arrayService.IsEqual(randomArray, randomArrayQuest10);
             Console.WriteLine(conclusion);
             //Quest11
@@ -88,6 +91,21 @@ namespace Project01
             //Quest17
             int[] arraySum = arrayService.GetArraySum(randomArray, randomArrayQuest10);
             arrayService.PrintArrayNumber(arraySum);
+            //Quest18
+            int[] arrayWithNewElementNum = arrayService.AddElementInArray(randomArray, 384);
+            arrayService.PrintArrayNumber(arrayWithNewElementNum);
+            Person[] arrayWithNewElementPer = arrayService.AddElementInArray(personArray, personSix);
+            techService.PrintArrayPerson(arrayWithNewElementPer);
+            //Quest19
+            int[] arrayWithoutFirtsElement = arrayService.RemoveFirstElementFromArray(randomArray);
+            arrayService.PrintArrayNumber(arrayWithoutFirtsElement);
+            Person[] arrayWithoutElement = arrayService.RemoveFirstElementFromArray(arrayWithNewElementPer);
+            techService.PrintArrayPerson(arrayWithoutElement);
+            //Quest20
+            int[] arrayWithoutLastElementNum = arrayService.RemoveLastElementFromArray(randomArray);
+            techService.PrintArrayNumber(arrayWithoutLastElementNum);
+            Person[] arrayWithoutLastElementPer = arrayService.RemoveLastElementFromArray(personArray);
+            techService.PrintArrayPerson(arrayWithoutLastElementPer);
         }
     }
 }
