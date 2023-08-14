@@ -106,6 +106,16 @@ namespace Project01
             techService.PrintArrayNumber(arrayWithoutLastElementNum);
             Person[] arrayWithoutLastElementPer = arrayService.RemoveLastElementFromArray(personArray);
             techService.PrintArrayPerson(arrayWithoutLastElementPer);
+            //Quest21
+            int[] arrayWithoutSelectedElementNum = arrayService.RemoveSelectedElementFromArray(randomArray, 2);
+            techService.PrintArrayNumber(arrayWithoutSelectedElementNum);
+            Person[] arrayWithoutSelectedElementPer = arrayService.RemoveSelectedElementFromArray(personArray, 3);
+            techService.PrintArrayPerson(arrayWithoutSelectedElementPer);
+            //Quest22
+            int[] arrayWithoutSelectedSegmentNum = arrayService.RemoveSelectedSegmentFromArray(randomArray, 3, 6);
+            techService.PrintArrayNumber(arrayWithoutSelectedSegmentNum);
+            Person[] arrayWithoutSelectedSegmentPer = arrayService.RemoveSelectedSegmentFromArray(personArray, 2, 4);
+            techService.PrintArrayPerson(arrayWithoutSelectedSegmentPer);
         }
     }
 }
