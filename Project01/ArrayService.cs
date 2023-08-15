@@ -600,4 +600,33 @@ namespace Project01
             }
             return arrayWithoutSegment;
         }
+        //Quest23
+        public int[] RemoveSelectedValueFromArray(int[] array, int selectedValue)
+        {
+            if (array == null || array.Length == 0)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            int countOfNumbers = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == selectedValue)
+                {
+                    countOfNumbers++;
+                }
+            }
+            int[] arrayWithoutValues = new int[array.Length - countOfNumbers];
+            for (int i = 0, j = 0; i < array.Length; i++)
+            {
+                if (array[i] == selectedValue)
+                {
+                    continue;
+                }
+                arrayWithoutValues[j] = array[i];
+                j++;
+            }
+            return arrayWithoutValues;
+        }
+    }
 }

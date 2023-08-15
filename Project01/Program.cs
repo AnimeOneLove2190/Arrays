@@ -116,6 +116,9 @@ namespace Project01
             techService.PrintArrayNumber(arrayWithoutSelectedSegmentNum);
             Person[] arrayWithoutSelectedSegmentPer = arrayService.RemoveSelectedSegmentFromArray(personArray, 2, 4);
             techService.PrintArrayPerson(arrayWithoutSelectedSegmentPer);
+            //Quest23
+            int[] arrayWithoutValues = arrayService.RemoveSelectedValueFromArray(randomArray, 7);
+            techService.PrintArrayNumber(arrayWithoutValues);
         }
     }
 }
