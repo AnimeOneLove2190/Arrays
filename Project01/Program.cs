@@ -49,6 +49,7 @@ namespace Project01
             personArray[2] = personThree;
             personArray[3] = personFour;
             personArray[4] = personFive;
+            Person[] emptyArrayPerson = new Person[0];
             double averageAge = arrayService.GetAverageAge(personArray);
             Console.WriteLine(averageAge);
             //Quest05
@@ -119,6 +120,11 @@ namespace Project01
             //Quest23
             int[] arrayWithoutValues = arrayService.RemoveSelectedValueFromArray(randomArray, 7);
             techService.PrintArrayNumber(arrayWithoutValues);
+            //Quest24
+            int[] concatenatedArray = arrayService.AddTwoArrays(randomArray, randomArrayQuest10);
+            techService.PrintArrayNumber(concatenatedArray);
+            Person[] concatenatedArrayP = arrayService.AddTwoArrays(personArray, emptyArrayPerson);
+            techService.PrintArrayPerson(concatenatedArrayP);
         }
     }
 }

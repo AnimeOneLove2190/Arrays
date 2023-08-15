@@ -628,5 +628,44 @@ namespace Project01
             }
             return arrayWithoutValues;
         }
+        //Quest24
+        public int[] AddTwoArrays(int[] arrayOne, int[] arrayTwo)
+        {
+            if (arrayOne == null || arrayTwo == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            int[] concatenatedArray = new int[arrayOne.Length + arrayTwo.Length];
+            int z = 0;
+            for (int i = 0; i < arrayOne.Length; i++, z++)
+            {
+                concatenatedArray[z] = arrayOne[i];
+            }
+            for (int i = 0; i < arrayTwo.Length; i++, z++)
+            {
+                concatenatedArray[z] = arrayTwo[i];
+            }
+            return concatenatedArray;
+        }
+        public Person[] AddTwoArrays(Person[] arrayOne, Person[] arrayTwo)
+        {
+            if (arrayOne == null || arrayTwo == null)
+            {
+                Console.WriteLine("Сработала защита");
+                return null;
+            }
+            Person[] concatenatedArray = new Person[arrayOne.Length + arrayTwo.Length];
+            int z = 0;
+            for (int i = 0; i < arrayOne.Length; i++, z++)
+            {
+                concatenatedArray[z] = arrayOne[i];
+            }
+            for (int i = 0; i < arrayTwo.Length; i++, z++)
+            {
+                concatenatedArray[z] = arrayTwo[i];
+            }
+            return concatenatedArray;
+        }
     }
 }
